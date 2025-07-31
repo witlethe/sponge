@@ -17,7 +17,7 @@ void DUMMY_CODE(Targs &&... /* unused */) {}
 using namespace std;
 
 ByteStream::ByteStream(const size_t capa)
-    : buffer(), capacity(capa), write_ended(false), read_ended(false), written_bytes(0) {}
+    : buffer(), capacity(capa), write_ended(false), read_ended(false), written_bytes(0), read_bytes(0) {}
 
 size_t ByteStream::write(const string &data) {
     size_t restWriteableSpace = remaining_capacity();
