@@ -16,6 +16,13 @@
 class ByteStream {
   private:
     // Your code here -- add private members as necessary.
+    // the most important thing is to find the suitable data structure for buffer.
+    std::deque<char> buffer;
+    size_t capacity;
+    bool write_ended;
+    bool read_ended;
+    size_t written_bytes;
+    size_t read_bytes;
 
     bool _error{};  //!< Flag indicating that the stream suffered an error.
 

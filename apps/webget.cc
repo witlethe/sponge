@@ -27,8 +27,9 @@ void get_URL(const string &host, const string &path) {
     message += "Host:" + host + "\r\n";
     message += "Connection: close\r\n\r\n";
 
-
     socket.write(message);
+    socket.shutdown(SHUT_WR);
+
     while (!socket.eof()) {
         cout << socket.read();
     }
